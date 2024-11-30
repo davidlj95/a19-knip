@@ -4,6 +4,18 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 Purpose of is to improve [`knip`](https://knip.dev/) defaults for Angular projects. So that it works nicely out-of-the-box.
 
+
+## Knip setup
+`knip` was added following the [getting started guide](https://knip.dev/overview/getting-started).
+
+```shell
+pnpm create @knip/config
+```
+
+> [`@knip/create-config`](https://www.npmjs.com/package/@knip/create-config) version `1.0.3`
+>   
+> [`knip`](https://www.npmjs.com/package/knip) version `5.38.3`
+
 ## Generation
 Command used to generate this project:
 
