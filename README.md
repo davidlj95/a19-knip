@@ -2,7 +2,7 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
-Purpose of is to improve [`knip`](https://knip.dev/) defaults for Angular projects. So that it works nicely out-of-the-box for Angular projects created with default options and server side rendering (SSR) enabled.
+Purpose of is to improve [`knip`](https://knip.dev/) defaults for Angular projects. So that it works nicely out-of-the-box for Angular projects created with default options and server side rendering (SSR) enabled. Plus then support common use cases like [environment files](#environment-files), [scripts and polyfills](#scripts-and-polyfills), ...
 
 ## Knip
 
