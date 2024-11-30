@@ -2,6 +2,18 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
+Purpose of is to improve [`knip`](https://knip.dev/) defaults for Angular projects. So that it works nicely out-of-the-box.
+
+## Generation
+Command used to generate this project:
+
+```shell
+pnpm dlx @angular/cli@19.0.2 new a19-knip \
+  --package-manager=pnpm \
+  --style=css \
+  --ssr --server-routing
+```
+
 ## Development server
 
 To start a local development server, run:
