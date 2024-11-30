@@ -163,17 +163,19 @@ Finally, as side note, a Jest builder is available too. But [it's still experime
 
 So with all this information, the way to go with this could be:
 
-1. **Karma plugin for Knip**
-   1. Enable if `karma` listed as development dependency.
-   1. Parse [Karma config file][karma-config-file] if exists.
-   1. [Test files](https://karma-runner.github.io/6.4/config/files.html): add them as non-production entry points. No defaults for that, it's a mandatory option.
-   1. [Plugins](https://karma-runner.github.io/6.4/config/configuration-file.html#plugins): add dependencies listed in `plugins` configuration as used, non-production dependencies. Default is all `karma-*` dependencies.
-1. **Angular to enable Karma plugin**
-   1. **Resolve Angular options into a Karma configuration**
-      1. Files: from builders options and their defaults.
-      1. Plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
-   1. **Send Angular resolved configuration to existing Karma configuration**. Plugins and files. With [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
-1. **Add files used Angular build options in test builder**. Seen in the [app build options](#app-build-options) above.
+- **Karma plugin for Knip**
+  - Enable if `karma` listed as development dependency.
+  - Parse [Karma config file][karma-config-file] if exists.
+  - [Test files](https://karma-runner.github.io/6.4/config/files.html): add them as non-production entry points. No defaults for that, it's a mandatory option.
+  - [Plugins](https://karma-runner.github.io/6.4/config/configuration-file.html#plugins): add dependencies listed in `plugins` configuration as used, non-production dependencies. Default is all `karma-*` dependencies.
+- **Angular to enable Karma plugin**
+  - **Resolve Angular options into a Karma configuration**
+    - Files: from builders options and their defaults.
+    - Plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
+  - **Send Angular resolved configuration to existing Karma configuration**.
+    - Plugins and files.
+    - With [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
+- **Add files used Angular build options in test builder**. Seen in the [app build options](#app-build-options) above.
 
 Plugin will be needed first before then passing configurations to it. However, using the files in Angular build options for the test target is something that could be done already. However, that could come later as it's not something required hence many users may not use those.
 
@@ -216,6 +218,7 @@ Sorted by high impact, low complexity first
 |  [ ]   |    | [Test build options: `main` / `tsConfig`](#plan)    |     🟢     |   ⬇️   |
 
 Complexity means subjective implementation complexity / work / effort.
+
 Impact:
 
 - ⏫ **very high**: affects freshly baked apps by default
