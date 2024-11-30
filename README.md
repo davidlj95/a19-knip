@@ -205,21 +205,22 @@ As seen in [app build options](#app-build-options), scripts and polyfill files t
 
 Sorted by high impact, low complexity first
 
-| Status | PR | Name                                             | Complexity | Impact |
-|:------:|:--:|:-------------------------------------------------|:----------:|:------:|
-|  [ ]   |    | [SSR fixes](#server-side-rendering-ssr)          |     🟢     |   ⏫    | 
-|  [ ]   |    | [Environment files](#environment-files)          |     🟡     |   ⬆️   |
-|  [ ]   |    | [Karma plugin](#plan)                            |     🔴     |   ⏫    |
-|  [ ]   |    | [Angular options to Karma plugin](#plan)         |     🟡     |   ⏫    |
-|  [ ]   |    | [Scripts build option](#scripts-and-polyfills)   |     🟢     |   ⬆️   |
-|  [ ]   |    | [Polyfills build option](#scripts-and-polyfills) |     🟢     |   ⬆️   |
-|  [ ]   |    | [Test build options: `main` / `tsConfig`](#plan) |     🟢     |   ⬇️   |
+| Status | PR | Name                                                | Complexity | Impact |
+|:------:|:--:|:----------------------------------------------------|:----------:|:------:|
+|  [ ]   |    | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    | 
+|  [ ]   |    | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
+|  [ ]   |    | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
+|  [ ]   |    | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
+|  [ ]   |    | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
+|  [ ]   |    | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
+|  [ ]   |    | [Test build options: `main` / `tsConfig`](#plan)    |     🟢     |   ⬇️   |
 
 Complexity means subjective implementation complexity / work / effort.
 Impact:
- - ⏫ **very high**: affects freshly baked apps by default
- - ⬆️ **high**: affects apps using subjectively usual custom configurations
- - ⬇️ **low**: affects apps with subjectively unusual custom configurations
+
+- ⏫ **very high**: affects freshly baked apps by default
+- ⬆️ **high**: affects apps using subjectively usual custom configurations
+- ⬇️ **low**: affects apps with subjectively unusual custom configurations
 
 ## Generation
 
