@@ -20,7 +20,7 @@ pnpm create @knip/config
 
 ### Initial results
 
-After installing `knip`, following output was given:
+After setup, installing and running `knip`, following output was given
 
 [knip-5.38.4]: https://github.com/webpro-nl/knip/releases/tag/5.38.4
 
@@ -31,6 +31,7 @@ After installing `knip`, following output was given:
 > * src/app/app.component.spec.ts
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * src/environments/environment.development.ts
 > * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
@@ -58,6 +59,7 @@ After installing `knip`, following output was given:
 > * src/app/app.component.spec.ts
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * src/environments/environment.development.ts
 > * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
@@ -240,6 +242,8 @@ pnpm dlx @angular/cli@19.0.2 new a19-knip \
   --style=css \
   --ssr --server-routing
 ```
+
+Later, environment files were generated with `ng generate environments`. They are used as expected by logging contents of it.
 
 ## Development server
 
