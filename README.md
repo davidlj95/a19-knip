@@ -22,14 +22,16 @@ pnpm create @knip/config
 
 After installing `knip`, following output was given:
 
+[knip-5.38.4]: https://github.com/webpro-nl/knip/releases/tag/5.38.4
+
 #### Regular mode
 
 > ##### Unused files (4)
 >
 > * src/app/app.component.spec.ts
-> * src/app/app.config.server.ts
-> * src/app/app.routes.server.ts
-> * src/main.server.ts
+> * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
 >
@@ -54,9 +56,9 @@ After installing `knip`, following output was given:
 > ##### Unused files (4)
 >
 > * src/app/app.component.spec.ts
-> * src/app/app.config.server.ts
-> * src/app/app.routes.server.ts
-> * src/main.server.ts
+> * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
+> * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
 >
@@ -79,6 +81,8 @@ There are several improvements that can be grouped by category:
 #### Server Side Rendering (SSR)
 
 ##### Include `src/main.server.ts`
+
+✅ **UPDATE: Done. Released as part of [v5.38.4][knip-5.38.4]**
 
 As production entry file (comes from `angular.json` `projects.*.architect.build.options.server` when using the new ESBuild-based `application` builder).
 
@@ -208,15 +212,15 @@ As seen in [app build options](#app-build-options), scripts and polyfill files t
 
 Sorted by high impact, low complexity first
 
-| Status | PR | Name                                                | Complexity | Impact |
-|:------:|:--:|:----------------------------------------------------|:----------:|:------:|
-|  [ ]   |    | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    | 
-|  [ ]   |    | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
-|  [ ]   |    | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
-|  [ ]   |    | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
-|  [ ]   |    | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
-|  [ ]   |    | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
-|  [ ]   |    | [Test build options: `main` / `tsConfig`](#plan)    |     🟢     |   ⬇️   |
+|      Status       |                        PR                        | Name                                                | Complexity | Impact |
+|:-----------------:|:------------------------------------------------:|:----------------------------------------------------|:----------:|:------:|
+| [🚀][knip-5.38.4] | [🔗](https://github.com/webpro-nl/knip/pull/865) | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    |
+|        [ ]        |                                                  | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
+|        [ ]        |                                                  | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
+|        [ ]        |                                                  | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
+|        [ ]        |                                                  | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
+|        [ ]        |                                                  | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
+|        [ ]        |                                                  | [Test build options: `main` / `tsConfig`](#plan)    |     🟢     |   ⬇️   |
 
 Complexity means subjective implementation complexity / work / effort.
 
