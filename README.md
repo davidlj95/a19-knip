@@ -24,6 +24,8 @@ After setup, installing and running `knip`, following output was given
 
 [knip-5.38.4]: https://github.com/webpro-nl/knip/releases/tag/5.38.4
 
+[knip-5.39.0]: https://github.com/webpro-nl/knip/releases/tag/5.39.0
+
 #### Regular mode
 
 > ##### Unused files (4)
@@ -31,7 +33,7 @@ After setup, installing and running `knip`, following output was given
 > * src/app/app.component.spec.ts
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
-> * src/environments/environment.development.ts
+> * ~~src/environments/environment.development.ts~~ [Solved in 5.39.0][knip-5.39.0]
 > * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
@@ -59,7 +61,7 @@ After setup, installing and running `knip`, following output was given
 > * src/app/app.component.spec.ts
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
-> * src/environments/environment.development.ts
+> * ~~src/environments/environment.development.ts~~ [Solved in 5.39.0][knip-5.39.0]
 > * ~~src/main.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 >
 > ##### Unused dependencies (3)
@@ -204,6 +206,8 @@ TL;DR: they're properly being reported as unused by default. As they're actually
 
 ##### Environment files
 
+✅ **UPDATE: Done. Released as part of [v5.39.0][knip-5.39.0]**
+
 As seen in [app build options](#app-build-options), when an app has environment files (see [docs](https://angular.dev/tools/cli/environments#configure-environment-specific-defaults)) they should be included too. They aren't included when specified as `build` options either.
 
 ##### Scripts and polyfills
@@ -217,7 +221,7 @@ Sorted by high impact, low complexity first
 |      Status       |                        PR                        | Name                                                | Complexity | Impact |
 |:-----------------:|:------------------------------------------------:|:----------------------------------------------------|:----------:|:------:|
 | [🚀][knip-5.38.4] | [🔗](https://github.com/webpro-nl/knip/pull/865) | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    |
-|        [ ]        |                                                  | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
+| [🚀][knip-5.39.0] | [🔗](https://github.com/webpro-nl/knip/pull/868) | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
 |        [ ]        |                                                  | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
 |        [ ]        |                                                  | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
 |        [ ]        |                                                  | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
