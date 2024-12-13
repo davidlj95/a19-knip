@@ -169,9 +169,11 @@ Finally, as side note, a Jest builder is available too. But [it's still experime
 
 ##### Plan
 
+[knip-5.40.0]: https://github.com/webpro-nl/knip/releases/tag/5.40.0
+
 So with all this information, the way to go with this could be:
 
-- **Karma plugin for Knip**
+- **Karma plugin for Knip** **UPDATE: ✅ Done. Released in [`5.40.0`]**
   - Enable if `karma` listed as development dependency.
   - Parse [Karma config file][karma-config-file] if exists.
   - [Test files](https://karma-runner.github.io/6.4/config/files.html): add them as non-production entry points. No defaults for that, it's a mandatory option.
@@ -222,7 +224,7 @@ Sorted by high impact, low complexity first
 |:-----------------:|:------------------------------------------------:|:----------------------------------------------------|:----------:|:------:|
 | [🚀][knip-5.38.4] | [🔗](https://github.com/webpro-nl/knip/pull/865) | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    |
 | [🚀][knip-5.39.0] | [🔗](https://github.com/webpro-nl/knip/pull/868) | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
-|        [ ]        |                                                  | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
+| [🚀][knip-5.40.0] | [🔗](https://github.com/webpro-nl/knip/pull/871) | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
 |        [ ]        |                                                  | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
 |        [ ]        |                                                  | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
 |        [ ]        |                                                  | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
