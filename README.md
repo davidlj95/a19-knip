@@ -178,16 +178,15 @@ So with all this information, the way to go with this could be:
   - Parse [Karma config file][karma-config-file] if exists.
   - [Test files](https://karma-runner.github.io/6.4/config/files.html): add them as non-production entry points. No defaults for that, it's a mandatory option.
   - [Plugins](https://karma-runner.github.io/6.4/config/configuration-file.html#plugins): add dependencies listed in `plugins` configuration as used, non-production dependencies. Default is all `karma-*` dependencies.
-- **Angular to enable Karma plugin**
-  - **Resolve Angular options into a Karma configuration**
+- **Angular's Karma builder**
     - Files: from builders options and their defaults.
-    - Plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
-  - **Send Angular resolved configuration to existing Karma configuration**.
-    - Plugins and files.
-    - With [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
-- **Add files used Angular build options in test builder**. Seen in the [app build options](#app-build-options) above.
+    - If configuration file not specified:
+      - Frameworks/plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
+    - If configuration file specified and not one of Karma default config files:
+      - Karma configuration file [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
+- ~~**Add files used Angular build options in test builder**. Seen in the [app build options](#app-build-options) above~~. It's already done, given the plugin grabs the configuration options disregarding of the test target.
 
-Plugin will be needed first before then passing configurations to it. However, using the files in Angular build options for the test target is something that could be done already. However, that could come later as it's not something required hence many users may not use those.
+Plugin will be needed first before then passing configurations to it. ~~However, using the files in Angular build options for the test target is something that could be done already. However, that could come later as it's not something required hence many users may not use those.~~
 
 #### Others
 
@@ -225,10 +224,9 @@ Sorted by high impact, low complexity first
 | [🚀][knip-5.38.4] | [🔗](https://github.com/webpro-nl/knip/pull/865) | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    |
 | [🚀][knip-5.39.0] | [🔗](https://github.com/webpro-nl/knip/pull/868) | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
 | [🚀][knip-5.40.0] | [🔗](https://github.com/webpro-nl/knip/pull/871) | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
-|        [ ]        |                                                  | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
+|        [ ]        | [🔗](https://github.com/webpro-nl/knip/pull/885) | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
 |        [ ]        |                                                  | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
 |        [ ]        |                                                  | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
-|        [ ]        |                                                  | [Test build options: `main` / `tsConfig`](#plan)    |     🟢     |   ⬇️   |
 
 Complexity means subjective implementation complexity / work / effort.
 
