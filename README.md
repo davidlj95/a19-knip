@@ -26,11 +26,13 @@ After setup, installing and running `knip`, following output was given
 
 [knip-5.39.0]: https://github.com/webpro-nl/knip/releases/tag/5.39.0
 
+[knip-5.42.0]: https://github.com/webpro-nl/knip/releases/tag/5.42.0
+
 #### Regular mode
 
 > ##### Unused files (4)
 >
-> * src/app/app.component.spec.ts
+> * ~~src/app/app.component.spec.ts~~ [Solved in 5.42.0][knip-5.42.0]
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/environments/environment.development.ts~~ [Solved in 5.39.0][knip-5.39.0]
@@ -38,27 +40,27 @@ After setup, installing and running `knip`, following output was given
 >
 > ##### Unused dependencies (3)
 >
-> | Name                              | Location     | Severity |
-> | :-------------------------------- | :----------- | :------- |
-> | @angular/platform-browser-dynamic | package.json | error    |
-> | @angular/compiler                 | package.json | error    |
-> | @angular/forms                    | package.json | error    |
+> | Name                                                                 | Location     | Severity |
+> |:---------------------------------------------------------------------| :----------- | :------- |
+> | @angular/platform-browser-dynamic                                    | package.json | error    |
+> | ~~@angular/compiler~~ [Unsure why but solved in 5.42.0][knip-5.42.0] | package.json | error    |
+> | @angular/forms                                                       | package.json | error    |
 >
 > ##### Unused devDependencies (5)
 >
-> | Name                        | Location     | Severity |
-> | :-------------------------- | :----------- | :------- |
-> | karma-jasmine-html-reporter | package.json | error    |
-> | karma-chrome-launcher       | package.json | error    |
-> | karma-coverage              | package.json | error    |
-> | karma-jasmine               | package.json | error    |
-> | jasmine-core                | package.json | error    |
+> | Name                                                             | Location     | Severity |
+> |:-----------------------------------------------------------------|:-------------|:---------|
+> | ~~karma-jasmine-html-reporter~~  [Solved in 5.42.0][knip-5.42.0] | package.json | error    |
+> | ~~karma-chrome-launcher~~  [Solved in 5.42.0][knip-5.42.0]       | package.json | error    |
+> | ~~karma-coverage~~  [Solved in 5.42.0][knip-5.42.0]              | package.json | error    |
+> | ~~karma-jasmine~~ [Solved in 5.42.0][knip-5.42.0]                | package.json | error    |
+> | ~~jasmine-core~~ [Solved in 5.42.0][knip-5.42.0]                 | package.json | error    |
 
 #### Production mode
 
 > ##### Unused files (4)
 >
-> * src/app/app.component.spec.ts
+> * ~~src/app/app.component.spec.ts~~ [Solved in 5.42.0][knip-5.42.0]
 > * ~~src/app/app.config.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/app/app.routes.server.ts~~ [Solved in 5.38.4][knip-5.38.4]
 > * ~~src/environments/environment.development.ts~~ [Solved in 5.39.0][knip-5.39.0]
@@ -66,11 +68,11 @@ After setup, installing and running `knip`, following output was given
 >
 > ##### Unused dependencies (3)
 >
-> | Name                              | Location     | Severity |
-> | :-------------------------------- | :----------- | :------- |
-> | @angular/platform-browser-dynamic | package.json | error    |
-> | @angular/compiler                 | package.json | error    |
-> | @angular/forms                    | package.json | error    |
+> | Name                                                                  | Location     | Severity |
+> |:----------------------------------------------------------------------| :----------- | :------- |
+> | @angular/platform-browser-dynamic                                     | package.json | error    |
+> | ~~@angular/compiler~~ [Unsure why, but solved in 5.42.0][knip-5.42.0] | package.json | error    |
+> | @angular/forms                                                        | package.json | error    |
 >
 > ##### Unlisted binaries (1)
 >
@@ -93,6 +95,8 @@ As production entry file (comes from `angular.json` `projects.*.architect.build.
 This will then use `src/app/app.config.server.ts`. Which will then use the `serverRoutes` from `src/app/app.routes.server.ts`. So those unused reported files will be gone too.
 
 #### Testing with Karma & Jasmine
+
+✅ **UPDATE: Done. Released as part of [v5.42.0][knip-5.42.0]**
 
 By default, Angular CLI initializes a workspace with an application with unit testing provided by Karma & Jasmine. This is specified in the Angular workspace configuration file `angular.json`, under the test target for a project: `projects.*.architect.test`. The builder is [`@angular-devkit/build-angular:karma`](https://github.com/angular/angular-cli/blob/19.0.2/packages/angular_devkit/build_angular/src/builders/karma).
 
@@ -178,12 +182,12 @@ So with all this information, the way to go with this could be:
   - Parse [Karma config file][karma-config-file] if exists.
   - [Test files](https://karma-runner.github.io/6.4/config/files.html): add them as non-production entry points. No defaults for that, it's a mandatory option.
   - [Plugins](https://karma-runner.github.io/6.4/config/configuration-file.html#plugins): add dependencies listed in `plugins` configuration as used, non-production dependencies. Default is all `karma-*` dependencies.
-- **Angular's Karma builder**
-    - Files: from builders options and their defaults.
-    - If configuration file not specified:
-      - Frameworks/plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
-    - If configuration file specified and not one of Karma default config files:
-      - Karma configuration file [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
+- **Angular's Karma builder** **UPDATE: ✅ Done. Released as part of [v5.42.0][knip-5.42.0]**
+  - Files: from builders options and their defaults.
+  - If configuration file not specified:
+    - Frameworks/plugins: from [hardcoded default Karma configuration][karma-builder-default-config] if no `karmaConfig` is specified
+  - If configuration file specified and not one of Karma default config files:
+    - Karma configuration file [Knip's `toConfig`](https://github.com/webpro-nl/knip/blob/5.38.3/packages/knip/src/util/input.ts#49)
 - ~~**Add files used Angular build options in test builder**. Seen in the [app build options](#app-build-options) above~~. It's already done, given the plugin grabs the configuration options disregarding of the test target.
 
 Plugin will be needed first before then passing configurations to it. ~~However, using the files in Angular build options for the test target is something that could be done already. However, that could come later as it's not something required hence many users may not use those.~~
@@ -198,7 +202,7 @@ TL;DR: they're properly being reported as unused by default. As they're actually
 
 - `@angular/platform-browser-dynamic`: makes sense to report as unused, as it's not used by default when creating standalone apps ([default since v17](https://blog.angular.dev/introducing-angular-v17-4d7033312e4b#:~:text=Standalone%20APIs%20from%20the%20start)). It [is used](https://github.com/angular/angular-cli/blob/19.0.2/packages/schematics/angular/application/files/standalone-files/src/main.ts.template) for module-based apps. Though it's added there in case you need to. [Seems it allows to run apps that require the JIT compiler on the client](https://angular.dev/reference/configs/npm-packages#default-dependencies:~:text=Includes%20providers%20and%20methods%20to%20compile%20and%20run%20the%20application%20on%20the%20client%20using%20the%20JIT%20compiler.). Can't say more as haven't dealt with it much.
   - After trying to uninstall it from a project given it was apparently unneeded, Karma tests failed because couldn't be compiled. Seems the testing entrypoint is needed: `ng-virtual-main.js!=!data:text/javascript;base64,[...]:2:0-119 - Error: Module not found: Error: Can't resolve '@angular/platform-browser-dynamic/testing' in '[...]'`. So seems if using Karma testing, this is needed.
-- `@angular/compiler`: same as above. Seems if not using JIT on the client, not needed, could be a development dependency. Can't say much, haven't dealt with it.
+- `@angular/compiler`: same as above. Seems if not using JIT on the client, not needed, could be a development dependency. Can't say much, haven't dealt with it. **UPDATE: no longer appearing after upgrading to 5.42.0**
 - `@angular/forms`: if not using forms, it's correctly to appear as unused, as it's not used. But Angular CLI adds it there by default so you have it there when you want to use it. Users could choose to ignore that one or uninstall it if unused.
 
 ##### Unlisted binaries
@@ -213,6 +217,8 @@ As seen in [app build options](#app-build-options), when an app has environment 
 
 ##### Scripts and polyfills
 
+⚙️ **UPDATE: PARTIALLY Done. Scripts released as part of [v5.42.0][knip-5.42.0]**
+
 As seen in [app build options](#app-build-options), scripts and polyfill files to use in the app can be specified in there. They should be taken into account. Both the ones in `build` and `test` target. Those in `build` as production entries. Those in `test` as non-production entries.
 
 ### Tasks
@@ -224,8 +230,8 @@ Sorted by high impact, low complexity first
 | [🚀][knip-5.38.4] | [🔗](https://github.com/webpro-nl/knip/pull/865) | [SSR fixes](#server-side-rendering-ssr)             |     🟢     |   ⏫    |
 | [🚀][knip-5.39.0] | [🔗](https://github.com/webpro-nl/knip/pull/868) | [Environment files](#environment-files)             |     🟡     |   ⬆️   |
 | [🚀][knip-5.40.0] | [🔗](https://github.com/webpro-nl/knip/pull/871) | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
-|        [ ]        | [🔗](https://github.com/webpro-nl/knip/pull/885) | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
-|        [ ]        |                                                  | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
+| [🚀][knip-5.42.0] | [🔗](https://github.com/webpro-nl/knip/pull/885) | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
+| [🚀][knip-5.42.0] | [🔗](https://github.com/webpro-nl/knip/pull/886) | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
 |        [ ]        |                                                  | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
 
 Complexity means subjective implementation complexity / work / effort.
