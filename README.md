@@ -217,7 +217,9 @@ As seen in [app build options](#app-build-options), when an app has environment 
 
 ##### Scripts and polyfills
 
-⚙️ **UPDATE: PARTIALLY Done. Scripts released as part of [v5.42.0][knip-5.42.0]**
+[knip-5.42.2]: https://github.com/webpro-nl/knip/releases/tag/5.42.2
+
+✅ **UPDATE: Done. Scripts released as part of [v5.42.0][knip-5.42.0]. Polyfills as part of [v5.42.2][knip-5.42.2]**
 
 As seen in [app build options](#app-build-options), scripts and polyfill files to use in the app can be specified in there. They should be taken into account. Both the ones in `build` and `test` target. Those in `build` as production entries. Those in `test` as non-production entries.
 
@@ -232,7 +234,7 @@ Sorted by high impact, low complexity first
 | [🚀][knip-5.40.0] | [🔗](https://github.com/webpro-nl/knip/pull/871) | [Karma plugin](#plan)                               |     🔴     |   ⏫    |
 | [🚀][knip-5.42.0] | [🔗](https://github.com/webpro-nl/knip/pull/885) | (Needs 👆) [Angular options to Karma plugin](#plan) |     🟡     |   ⏫    |
 | [🚀][knip-5.42.0] | [🔗](https://github.com/webpro-nl/knip/pull/886) | [Scripts build option](#scripts-and-polyfills)      |     🟢     |   ⬆️   |
-|        [ ]        |                                                  | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
+| [🚀][knip-5.42.2] | [🔗](https://github.com/webpro-nl/knip/pull/913) | [Polyfills build option](#scripts-and-polyfills)    |     🟢     |   ⬆️   |
 
 Complexity means subjective implementation complexity / work / effort.
 
